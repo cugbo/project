@@ -1,0 +1,21 @@
+{% load static %}
+<link href="{% static 'styles.css'  %}" rel="stylesheet" type="text/css">
+
+{% if form.errors %}
+    <p><strong>Invalid Credentials</strong></p>
+{% endif %}
+
+{% if next %}
+        <h3>Please Login!</h3><br>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name ="username"><br>
+        <label>Password</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+
+</form>
+<a href="{% url 'madusonovidiusscrumy:index' %}">Index</a>

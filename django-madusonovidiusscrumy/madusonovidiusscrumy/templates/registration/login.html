@@ -1,0 +1,12 @@
+{% if form.errors %}
+    <p><strong>Invalid Credentials</strong></p>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <label>Username</label>
+    <input type="text" name ="username"><br>
+    <label>Password</label>
+    <input type="password" name="username"><br>
+    <input type="submit">
+</form>

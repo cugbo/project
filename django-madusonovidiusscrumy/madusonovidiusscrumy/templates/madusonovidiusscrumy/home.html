@@ -1,0 +1,41 @@
+<table>
+        <tr>
+        <th>User</th>
+        <th>Weekly Goals</th>
+        <th>Daily Goals</th>
+        <th>Verify Goals</th>
+        <th>Done Goals</th>
+        </tr>
+
+        {% for goal in scrumygoals %}
+        <tr>
+            <td>{{ goal.user }}</td>
+            <td>
+                {% if goal.goal_status.status_name == 'Weekly Goal' %}
+                {{ goal.goal_name }}, {{ goal.goal_id }}
+                {% endif %}
+            </td>
+
+            <td>
+                {% if goal.goal_status.status_name == 'Daily Goal' %}
+                {{ goal.goal_name }}, {{ goal.goal_id }}
+                {% endif %}
+            </td>
+
+            <td>
+                {% if goal.goal_status.status_name == 'Verify Goal' %}
+                {{ goal.goal_name }}, {{ goal.goal_id }}
+                {% endif %}
+            </td>
+
+            <td>
+                {% if goal.goal_status.status_name == 'Done Goal' %}
+                {{ goal.goal_name }}, {{ goal.goal_id }}
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+</table>

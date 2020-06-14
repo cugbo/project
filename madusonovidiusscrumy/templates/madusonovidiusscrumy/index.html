@@ -1,0 +1,12 @@
+{% load static %}
+<link href="{% static 'madusonovidiusscrumy/../../static/styles.css' %}" rel="stylesheet" type="text/css">
+
+     <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create Account">
+    </form>
+
+<a href="{% url 'madusonovidiusscrumy:addgoal' %}">Add Goals</a><br>
+<a href="{% url 'login' %}">Already have an account? Login Here</a>
+
